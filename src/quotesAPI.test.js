@@ -3,7 +3,7 @@ import { getRandomQuote } from "./quotesAPI";
 
 jest.mock("axios");
 
-it("returns qu title of the first album", async () => {
+it("returns random quote", async () => {
   axios.get.mockResolvedValue({
     data: {
       author: "Alan Kay",
