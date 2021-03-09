@@ -1,7 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import SocialButtons from "./SocialButtons";
 
-export function QuoteCard({ quote, author }) {
+export function QuoteCard({ quote, author, permalink }) {
   return (
     <Card>
       <Card.Body>
@@ -10,6 +11,9 @@ export function QuoteCard({ quote, author }) {
           <footer className="blockquote-footer">{author}</footer>
         </blockquote>
       </Card.Body>
+      <Card.Footer className="text-muted">
+        <SocialButtons url={permalink} />
+      </Card.Footer>
     </Card>
   );
 }
