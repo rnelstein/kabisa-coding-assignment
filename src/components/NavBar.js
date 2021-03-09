@@ -12,6 +12,9 @@ export function NavBar() {
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
+          <LinkContainer to="/slideshow">
+            <Nav.Link>Slideshow</Nav.Link>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
