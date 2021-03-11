@@ -1,23 +1,30 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { GlobalProvider } from "../context/GlobalState";
 import { Home } from "./Home";
+import { LikedQuotes } from "./LikedQuotes";
 import { NavBar } from "./NavBar";
 import { Slideshow } from "./Slideshow";
 
 export default function App() {
   return (
-    <Router>
-      <div>
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/slideshow">
-            <Slideshow />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <GlobalProvider>
+      <Router>
+        <div>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/slideshow">
+              <Slideshow />
+            </Route>
+            <Route exact path="/likedquotes">
+              <LikedQuotes />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </GlobalProvider>
   );
 }

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import SocialButtons from "./components/SocialButtons";
+import SocialButtons from "../components/SocialButtons";
 
 test("renders social buttons", () => {
   const url = "http://quotes.stormconsultancy.co.uk/quotes/29";
