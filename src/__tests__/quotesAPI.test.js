@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getRandomQuote, getRandomQuotes } from "./quotesAPI";
+import { getRandomQuote, getRandomQuotes } from "../quotesAPI";
 
 jest.mock("axios");
 
