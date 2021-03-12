@@ -2,16 +2,13 @@ import React, { useContext } from "react";
 import { Container, Row } from "react-bootstrap";
 import { QuoteCard } from "./QuoteCard";
 import { GlobalContext } from "../context/GlobalState";
-import { filterLikedArr, sortArrByLikes } from "../utilities";
 
 export function LikedQuotes() {
-  const { quotes } = useContext(GlobalContext);
+  const { likedQuotes } = useContext(GlobalContext);
 
-  if (!quotes) {
+  if (!likedQuotes) {
     return "loading...";
   }
-
-  let likedQuotes = sortArrByLikes(filterLikedArr(quotes));
 
   return (
     <Container>

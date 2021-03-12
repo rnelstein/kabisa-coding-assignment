@@ -10,8 +10,8 @@ export function QuoteCard({ id, quote, author, permalink, likes }) {
   const { handleLike } = useContext(GlobalContext);
 
   return (
-    <Card style={{ width: "36rem" }}>
-      <Card.Img src={img} alt="Card image" height={500} />
+    <Card className="custom-card mt-2 mb-3">
+      <Card.Img src={img} alt="Card image" className="d-block w-100" />
       <Card.ImgOverlay>
         <blockquote className="blockquote mb-0 text-center">
           <p className="text-white">{quote}</p>
@@ -22,7 +22,7 @@ export function QuoteCard({ id, quote, author, permalink, likes }) {
           />
         </blockquote>
       </Card.ImgOverlay>
-      <Card.Footer className="mx-auto">
+      <Card.Footer className="mx-auto custom-card-footer">
         <SocialButtons url={permalink} />
       </Card.Footer>
     </Card>

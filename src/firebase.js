@@ -29,6 +29,12 @@ export const addQuote = (quote) => {
 };
 
 export const addMultipleQuotes = (quotes) => {
-  quotes.forEach((quote) => addQuote(quote));
+  let batch = firestore.batch();
+
+  quotes.forEach((quote) => {
+    let docRef = quotesRef.doc(`${quote.id}`);
+    batch.set(docRef, quote, { merge: true });
+  });
+  batch.commit();
 };
 export default firebase;

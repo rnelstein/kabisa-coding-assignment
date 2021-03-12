@@ -1,3 +1,5 @@
+import { filterLikedArr, sortArrByLikes } from "../utilities";
+
 const AppReducer = (state, action) => {
   switch (action.type) {
     case "SET_USER":
@@ -10,6 +12,7 @@ const AppReducer = (state, action) => {
       return {
         ...state,
         quotes: action.payload,
+        likedQuotes: sortArrByLikes(filterLikedArr(action.payload)),
       };
 
     default:

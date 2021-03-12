@@ -5,12 +5,13 @@ import { Home } from "./Home";
 import { LikedQuotes } from "./LikedQuotes";
 import { NavBar } from "./NavBar";
 import { Slideshow } from "./Slideshow";
+import "./App.css";
 
 export default function App() {
   return (
     <GlobalProvider>
       <Router>
-        <div>
+        <main>
           <NavBar />
           <Switch>
             <Route exact path="/">
@@ -23,7 +24,7 @@ export default function App() {
               <LikedQuotes />
             </Route>
           </Switch>
-        </div>
+        </main>
       </Router>
     </GlobalProvider>
   );

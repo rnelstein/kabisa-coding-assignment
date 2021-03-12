@@ -9,6 +9,5 @@ export const sortArrByLikes = (arr) => {
 };
 
 export const filterLikedArr = (arr) => {
-  return arr.filter((obj) => !!obj.likes)
+  return arr.filter((obj) => !!obj.likes);
 };
-

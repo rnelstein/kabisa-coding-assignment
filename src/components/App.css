@@ -1,0 +1,17 @@
+.custom-list-group-item {
+  padding: 1rem 1rem !important;
+}
+
+.custom-card {
+  width: 24rem;
+}
+
+.custom-card-footer {
+  background-color: #ffff !important;
+}
+
+@media (max-width: 320px) {
+  .custom-card {
+    width: 20rem;
+  }
+}

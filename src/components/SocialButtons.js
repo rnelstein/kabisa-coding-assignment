@@ -19,31 +19,31 @@ import {
 const SocialButtons = ({ url }) => {
   return (
     <ListGroup horizontal data-testid={url}>
-      <ListGroup.Item>
+      <ListGroup.Item className="custom-list-group-item">
         <FacebookShareButton url={url}>
-          <FacebookIcon size={32} round />
+          <FacebookIcon size={25} round />
         </FacebookShareButton>
       </ListGroup.Item>
-      <ListGroup.Item>
+      <ListGroup.Item className="custom-list-group-item">
         <TwitterShareButton url={url}>
-          <TwitterIcon size={32} round />
+          <TwitterIcon size={25} round />
         </TwitterShareButton>
       </ListGroup.Item>
 
-      <ListGroup.Item>
+      <ListGroup.Item className="custom-list-group-item">
         <LinkedinShareButton url={url}>
-          <LinkedinIcon size={32} round />
+          <LinkedinIcon size={25} round />
         </LinkedinShareButton>
       </ListGroup.Item>
 
-      <ListGroup.Item>
+      <ListGroup.Item className="custom-list-group-item">
         <WhatsappShareButton url={url}>
-          <WhatsappIcon size={32} round />
+          <WhatsappIcon size={25} round />
         </WhatsappShareButton>
       </ListGroup.Item>
-      <ListGroup.Item>
+      <ListGroup.Item className="custom-list-group-item">
         <EmailShareButton url={url}>
-          <EmailIcon size={32} round />
+          <EmailIcon size={25} round />
         </EmailShareButton>
       </ListGroup.Item>
     </ListGroup>

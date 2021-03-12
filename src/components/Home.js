@@ -9,7 +9,7 @@ export function Home() {
 
   useEffect(() => {
     getRandomQuote().then(({ data }) => {
-      addQuote(data)
+      addQuote(data);
       setQuote(data);
     });
   }, []);
@@ -17,6 +17,7 @@ export function Home() {
   if (!quote) {
     return "loading...";
   }
+  
   return (
     <Container>
       <Row className="justify-content-center">

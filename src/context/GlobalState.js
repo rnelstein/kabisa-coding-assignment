@@ -9,6 +9,7 @@ import { collectIdsAndDocs } from "../utilities";
 const initialState = {
   user: null,
   quotes: null,
+  likedQuotes: null,
 };
 
 export const GlobalContext = createContext(initialState);
@@ -46,11 +47,11 @@ export const GlobalProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    unsubscribeFromAuth = auth.onAuthStateChanged(user => setUser(user));
+    unsubscribeFromAuth = auth.onAuthStateChanged((user) => setUser(user));
 
     unsubscribeFromQuotes = firestore
       .collection("quotes")
-      .onSnapshot(snapshot => {
+      .onSnapshot((snapshot) => {
         const data = snapshot.docs.map(collectIdsAndDocs);
         setQuotes(data);
       });
@@ -66,6 +67,7 @@ export const GlobalProvider = ({ children }) => {
       value={{
         user: state.user,
         quotes: state.quotes,
+        likedQuotes: state.likedQuotes,
         handleLike,
       }}
     >

@@ -21,7 +21,7 @@ export function Slideshow() {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Carousel>
+        <Carousel indicators={false}>
           {quotes.map((quote, i) => (
             <Carousel.Item key={i}>
               <QuoteCard {...quote} />
