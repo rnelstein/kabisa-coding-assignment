@@ -41,12 +41,12 @@ These are the user stories that have been implemented in the application
 
 For a development environment, the application needs some environment variables. Rename the app's .env.example to .env and enter the following environment variables:
 
-REACT_APP_apiKey=
-REACT_APP_authDomain=
-REACT_APP_projectId=
-REACT_APP_storageBucket=
-REACT_APP_messagingSenderId=
-REACT_APP_appId=
+- REACT_APP_apiKey=
+- REACT_APP_authDomain=
+- REACT_APP_projectId=
+- REACT_APP_storageBucket=
+- REACT_APP_messagingSenderId=
+- REACT_APP_appId=
 
   
   
