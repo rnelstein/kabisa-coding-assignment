@@ -3,12 +3,12 @@ import { Card } from "react-bootstrap";
 import SocialButtons from "./SocialButtons";
 import { GlobalContext } from "../context/GlobalState";
 import { LikeButton } from "./LikeButton";
-import { findQuoteById } from "../utilities";
+import { findQuoteById, likesIncludesId } from "../utilities";
 
 const img = process.env.PUBLIC_URL + "/img/343A40.png";
 
 export function QuoteCard({ id, quote, author, permalink, likes }) {
-  const { handleLike, likedQuotes } = useContext(GlobalContext);
+  const { user, handleLike, likedQuotes } = useContext(GlobalContext);
 
   const foundLikedQuote = findQuoteById(likedQuotes, id);
 
@@ -25,6 +25,7 @@ export function QuoteCard({ id, quote, author, permalink, likes }) {
           <footer className="blockquote-footer mb-1">{author}</footer>
           <LikeButton
             likes={likes}
+            isLiked={user && likes && likesIncludesId(likes, user.uid)}
             handleLike={() => handleLike({ id, quote, permalink, likes })}
           />
         </blockquote>

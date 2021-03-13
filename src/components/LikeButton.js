@@ -1,12 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
-import { GlobalContext } from "../context/GlobalState";
-import { likesIncludesId } from "../utilities";
 
-export function LikeButton({ likes, handleLike }) {
-  const { user } = useContext(GlobalContext);
-
-  const isLiked = user && likes && likesIncludesId(likes, user.uid);
+export function LikeButton({ isLiked, likes, handleLike }) {
   return (
     <Button onClick={handleLike}>
       {likes && likes.length}{" "}
