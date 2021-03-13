@@ -4,12 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import { auth } from "../firebase";
 import AppReducer from "./AppReducer";
 import { firestore, fieldValue } from "../firebase";
-import { collectIdsAndDocs } from "../utilities";
+import { collectIdsAndDocs, likesIncludesId } from "../utilities";
 
 const initialState = {
   user: null,
   quotes: null,
-  likedQuotes: null,
+  likedQuotes: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -40,9 +40,14 @@ export const GlobalProvider = ({ children }) => {
       toast.error("Please sign in!");
       return;
     }
-
+    let isLiked;
+    if (quote.likes) {
+      isLiked = likesIncludesId(quote.likes, state.user.uid);
+    }
     await quotesRef.doc(`${quote.id}`).update({
-      likes: fieldValue.arrayUnion(state.user.uid),
+      likes: !isLiked
+        ? fieldValue.arrayUnion(state.user.uid)
+        : fieldValue.arrayRemove(state.user.uid),
     });
   };
 
