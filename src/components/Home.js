@@ -17,7 +17,7 @@ export function Home() {
   if (!quote) {
     return "loading...";
   }
-  
+
   return (
     <Container>
       <Row className="justify-content-center">
